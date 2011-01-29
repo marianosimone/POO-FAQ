@@ -273,8 +273,6 @@ Podríamos, sin embargo, crear *subtipos* de ``Forma`` que alberguen esta informa
 Hasta dónde un concepto es lo suficientemente abstracto como para que tenga sentido representarlo mediante una clase abstracta depende mucho del sistema y de la especificidad que busque el programador en su diseño. Para alguno una
 clase ``Auto`` puede ser obligadamente abstracta (por ejemplo, si uno piensa en tener subtipos del tipo ``Convertible`` o ``Ferrari``). Para otros, una clase concreta ``Auto`` puede ser suficiente.
 
-**Atención:** Las clases abstractas no existen en todos los lenguajes que soportan el paradigma de la POO. Python, por ejemplo, no las soporta.
-
 Todo muy lindo pero... ¿Cómo declaro un "método abstracto"?
 -----------------------------------------------------------
 Los métodos abstractos (también llamados *virtuales puros*) son, generalmente, métodos sin implementación. Los métodos abstractos dan origen a las clases abstractas. De esta manera, las clases descendiente están **obligadas a implementarlos**.::
