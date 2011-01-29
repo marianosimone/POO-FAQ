@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>FAQ de Programación Orientada a Objetos</title>
+<style type="text/css">
+
+/*
+:Author: Pablo Antonio
+:Contact: pabloa@gmail.com
+:Copyright: This stylesheet has been placed in the public domain.
+
+:Modifications by: Mariano Simone
+:Contact: marianosimone@gmail.com
+
+Stylesheet for use with Docutils. Specially customized for my FAQ
+on "Algoritmos y Programacion II".
+*/
+
+@import url(html4css1.css);
+
+a.toc-backref {
+	text-decoration: none;
+	color: black;
+}
+pre.literal-block {
+	background: #e3e3e3;
+	padding: 10px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+h2 {
+	background: #acffbc;
+	padding: 2px;
+}
+h1 {
+	background: #84d292;
+	padding: 2px;
+}
+
+h1.title {
+	background: #FFFFFF;
+}
+
+div.image {
+	text-align: center;
+}
+
+div.contents {
+	border: 1px solid #60c937;
+	background: #ddffcf;
+	/*font-weight: bold;*/
+	padding: 5px;
+	font-size: 95%;
+	line-height: 20px;
+}
+
+tt.literal {
+	background: white;
+}
+
+img {
+	text-align: center;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="faq-de-programaci-n-orientada-a-objetos">
+<h1 class="title">FAQ de Programación Orientada a Objetos</h1>
+
+<p>El presente documento nació como <em>resumen</em> o <em>material de estudio</em> para quienes se encuentren cursando la materia <strong>Algoritmos y Programación II (75.41)</strong> en la <strong>Facultad de Ingeniería de la Universidad de Buenos Aires</strong>.
+Sin embargo, su autor original (<a class="reference external" href="http://pablo-a.com.ar">Pablo Antonio</a>), lo hizo pensando para que pueda serle útil a cualquier persona interesada en los temas tratados en la materia.</p>
+<p>Se encuentra estructurado en formato de FAQ (<em>Frequently Asked Questions</em>). Sin más, se trata de un documento con preguntas concretas y respuestas simples y directas. La especificidad de las respuestas va de la mano con la de las
+preguntas. Algunas respuestas son vagas pero generan interrogantes que se responden en subsiguientes preguntas.</p>
+<p>En principio, dada la intención del documento, se intentará tratar los temas <em>desde la mirada que se da en la materia</em>. Es decir, no se buscará profundizar demasiado en aquello que sólo es visto superficialmente, por ejemplo. Sin
+embargo, se proveerán <em>links</em> a documentos con más información.</p>
+<p>Lo anterior tampoco quiere decir que lo que aquí se halla escrito sea lo que las cátedras pretenden que uno sepa, ni mucho menos. Se trata simplemente de un documento que quiere servir de ayuda; ni más ni menos que eso.</p>
+<p>La presente versión, es una extensión a la original, realizada por <a class="reference external" href="http://0pointer.com.ar">Mariano Simone</a>, con el fin de incluir más contenidos y complementar los ejemplos (amén de republicar el documento, ya que el primero no está online)</p>
+<div class="contents topic" id="tabla-de-contenidos">
+<p class="topic-title first">Tabla de contenidos</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#estructuras-de-datos" id="id5">1&nbsp;&nbsp;&nbsp;Estructuras de datos</a><ul class="auto-toc">
+<li><a class="reference internal" href="#lista" id="id6">1.1&nbsp;&nbsp;&nbsp;Lista</a></li>
+<li><a class="reference internal" href="#pila" id="id7">1.2&nbsp;&nbsp;&nbsp;Pila</a></li>
+<li><a class="reference internal" href="#cola" id="id8">1.3&nbsp;&nbsp;&nbsp;Cola</a></li>
+<li><a class="reference internal" href="#rbol" id="id9">1.4&nbsp;&nbsp;&nbsp;Árbol</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#introducci-n-a-la-programaci-n-orientada-a-objetos-poo" id="id10">2&nbsp;&nbsp;&nbsp;Introducción a la Programación Orientada a Objetos (POO)</a><ul class="auto-toc">
+<li><a class="reference internal" href="#programaci-n-orientada-a-objetos-y-qu-es-eso" id="id11">2.1&nbsp;&nbsp;&nbsp;¿Programación Orientada a Objetos? ¿Y qué es eso?</a></li>
+<li><a class="reference internal" href="#qu-son-los-objetos-en-poo" id="id12">2.2&nbsp;&nbsp;&nbsp;¿Qué son los objetos en POO?</a></li>
+<li><a class="reference internal" href="#qu-son-las-clases" id="id13">2.3&nbsp;&nbsp;&nbsp;¿Qué son las clases?</a></li>
+<li><a class="reference internal" href="#me-vuelven-loco-con-los-nombres-por-qu-cada-cosa-tiene-tantos-nombres-diferentes" id="id14">2.4&nbsp;&nbsp;&nbsp;Me vuelven loco con los nombres. ¿Por qué cada cosa tiene tantos nombres diferentes?</a></li>
+<li><a class="reference internal" href="#qu-quieren-decir-con-encapsulamiento" id="id15">2.5&nbsp;&nbsp;&nbsp;¿Qué quieren decir con &quot;encapsulamiento&quot;?</a></li>
+<li><a class="reference internal" href="#qu-es-encapsulamiento-u-ocultamiento-de-datos-en-poo" id="id16">2.6&nbsp;&nbsp;&nbsp;¿Qué es &quot;encapsulamiento u ocultamiento de datos&quot; en POO?</a></li>
+<li><a class="reference internal" href="#qu-es-la-herencia" id="id17">2.7&nbsp;&nbsp;&nbsp;¿Qué es la herencia?</a></li>
+<li><a class="reference internal" href="#no-entend-lo-del-v-nculo-es-un-es-un-qu" id="id18">2.8&nbsp;&nbsp;&nbsp;No entendí lo del vínculo &quot;es un&quot;. ¿&quot;Es un&quot; qué?</a></li>
+<li><a class="reference internal" href="#qu-tengo-que-entender-por-redefinici-n" id="id19">2.9&nbsp;&nbsp;&nbsp;¿Qué tengo que entender por &quot;redefinición&quot;?</a></li>
+<li><a class="reference internal" href="#qu-es-polimorfismo" id="id20">2.10&nbsp;&nbsp;&nbsp;¿Qué es polimorfismo?</a></li>
+<li><a class="reference internal" href="#qu-quiere-decir-que-un-m-todo-sea-virtual-es-importante" id="id21">2.11&nbsp;&nbsp;&nbsp;¿Qué quiere decir que un método sea &quot;virtual&quot;? ¿Es importante?</a></li>
+<li><a class="reference internal" href="#qu-es-una-clase-abstracta" id="id22">2.12&nbsp;&nbsp;&nbsp;¿Qué es una &quot;clase abstracta&quot;?</a></li>
+<li><a class="reference internal" href="#todo-muy-lindo-pero-c-mo-declaro-un-m-todo-abstracto" id="id23">2.13&nbsp;&nbsp;&nbsp;Todo muy lindo pero... ¿Cómo declaro un &quot;método abstracto&quot;?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contenidos-adicionales" id="id24">3&nbsp;&nbsp;&nbsp;Contenidos adicionales</a><ul class="auto-toc">
+<li><a class="reference internal" href="#bubble-sort" id="id25">3.1&nbsp;&nbsp;&nbsp;Bubble sort</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#todo" id="id26">4&nbsp;&nbsp;&nbsp;TODO</a></li>
+<li><a class="reference internal" href="#cambios" id="id27">5&nbsp;&nbsp;&nbsp;Cambios</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id1" id="id28">5.1&nbsp;&nbsp;&nbsp;21/01/2011</a></li>
+<li><a class="reference internal" href="#id2" id="id29">5.2&nbsp;&nbsp;&nbsp;14/08/2007</a></li>
+<li><a class="reference internal" href="#id3" id="id30">5.3&nbsp;&nbsp;&nbsp;25/07/2007</a></li>
+<li><a class="reference internal" href="#id4" id="id31">5.4&nbsp;&nbsp;&nbsp;10/07/2007</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="estructuras-de-datos">
+<h1><a class="toc-backref" href="#id5">1&nbsp;&nbsp;&nbsp;Estructuras de datos</a></h1>
+<div class="section" id="lista">
+<h2><a class="toc-backref" href="#id6">1.1&nbsp;&nbsp;&nbsp;Lista</a></h2>
+<p>Blah</p>
+</div>
+<div class="section" id="pila">
+<h2><a class="toc-backref" href="#id7">1.2&nbsp;&nbsp;&nbsp;Pila</a></h2>
+<p>Bleh</p>
+</div>
+<div class="section" id="cola">
+<h2><a class="toc-backref" href="#id8">1.3&nbsp;&nbsp;&nbsp;Cola</a></h2>
+<p>Buh</p>
+</div>
+<div class="section" id="rbol">
+<h2><a class="toc-backref" href="#id9">1.4&nbsp;&nbsp;&nbsp;Árbol</a></h2>
+<p>Bueh</p>
+</div>
+</div>
+<div class="section" id="introducci-n-a-la-programaci-n-orientada-a-objetos-poo">
+<h1><a class="toc-backref" href="#id10">2&nbsp;&nbsp;&nbsp;Introducción a la Programación Orientada a Objetos (POO)</a></h1>
+<div class="section" id="programaci-n-orientada-a-objetos-y-qu-es-eso">
+<h2><a class="toc-backref" href="#id11">2.1&nbsp;&nbsp;&nbsp;¿Programación Orientada a Objetos? ¿Y qué es eso?</a></h2>
+<p>Antes que nada, la Programación Orientada a Objetos (POO) es un <strong>paradigma</strong> de programación. Muy sintéticamente, un paradigma es una manera de <em>pensar</em> al software. Cada paradigma trae consigo conceptos clave, una terminología y una
+manera de ver las cosas diferente.</p>
+<p>La POO, en particular, es un paradigma que tiene sus raíces en los años 60 (con la aparición de Simula), aunque obtuvo una mayor popularidad recién en los 70 (con Smalltalk) y se hizo masiva ya desde los 80 (con la llegada de C++).</p>
+<p>Existe mucho material para leer sobre su historia, si se quiere, pero a nuestros fines lo más destacable de la POO son las facilidades que nos brinda como programadores.</p>
+<p>En una primera mirada, la POO nos ofrece una nueva manera de diseñar nuestros programas. Esta manera es <strong>intuitiva</strong>, más <strong>cercana a la realidad</strong> y nos permite alcanzar un <strong>mayor nivel de abstracción</strong>, en comparación con otros
+paradigmas tradicionales. Si programamos con criterio, nuestro código puede llegar a:</p>
+<ul class="simple">
+<li>mayor <strong>mantenibilidad</strong></li>
+<li>mayor <strong>extensibilidad</strong></li>
+<li>mayor <strong>modularidad</strong></li>
+<li>mejor <strong>aprovechamiento del código</strong></li>
+</ul>
+<p>Todas estas características demuestran la gran capacidad de adaptación de nuestras aplicaciones. La POO nos permite pensar en términos de <strong>objetos</strong>, actores de nuestros problemas reales, e <strong>interacciones</strong> entre ellos, tal
+como ocurre en la realidad.</p>
+<p>Links de interés:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Object-oriented_programming">Artículo en Wikipedia sobre &quot;Object-oriented programming&quot;</a></li>
+</ul>
+</div>
+<div class="section" id="qu-son-los-objetos-en-poo">
+<h2><a class="toc-backref" href="#id12">2.2&nbsp;&nbsp;&nbsp;¿Qué son los objetos en POO?</a></h2>
+<p>Cuando tratamos de solucionar un problema real, nos encontramos siempre con muchos factores intervinientes, participantes (tangibles o no) que influyen de alguna forma. Podríamos pensar, a modo de ejemplo, que se nos ha asignado la tarea de crear un sistema para gestionar una biblioteca. Al pensar en el diseño de nuestra aplicación, a simple vista podemos reconocer varios actores intervinientes, como los libros, los empleados, los lectores.</p>
+<p>Los <strong>objetos</strong> son las representaciones computacionales de aquellos participantes <em>que nos interesan</em>. Nunca dejando de lado el problema que se pretende solucionar, también ellos, los objetos, deben tener las <em>características mínimas</em> que requieren para ser modelados. En nuestro caso, los libros, los empleados y los lectores podrían ser objetos de nuestra
+aplicación; todo depende de cómo queramos diseñarla.</p>
+<p>Se dice que los objetos tienen un <strong>estado</strong> y un <strong>comportamiento</strong>. El estado de los objetos se aloja en sus <em>atributos</em>, y su comportamiento radica en sus <em>métodos</em>. Así, atributos de un libro podrían ser su <tt class="docutils literal"><span class="pre">titulo</span></tt> y <tt class="docutils literal"><span class="pre">autor</span></tt>, si se encuentra o no <tt class="docutils literal"><span class="pre">enStock</span></tt>, etc. Los atributos de un empleado podrían ser su <tt class="docutils literal"><span class="pre">nombre</span></tt>, <tt class="docutils literal"><span class="pre">legajo</span></tt>, <tt class="docutils literal"><span class="pre">cargo</span></tt>. Sin embargo, probablemente no nos interese saber sus <tt class="docutils literal"><span class="pre">hobbies</span></tt> o su  <tt class="docutils literal"><span class="pre">posicionPreferidaParaPracticarSnowboard</span></tt>. Del mismo modo, podría tener sentido la adjudicación de un método
+<tt class="docutils literal"><span class="pre">obtenerLegajo()</span></tt> a un objeto <tt class="docutils literal"><span class="pre">Empleado</span></tt>, que devuelva el número de legajo de este; pero quizás un método <tt class="docutils literal"><span class="pre">practicarWindsurf()</span></tt> no sea requerido.</p>
+<p>En el transcurso de cualquier aplicación, los objetos <em>interactúan</em> entre sí mediante el envío de <strong>mensajes</strong>.</p>
+<p>Links de interés:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://java.sun.com/docs/books/tutorial/java/concepts/object.html">&quot;What Is an Object?&quot; en un tutorial de Sun</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Object_%28computer_science%29">Artículo en Wikipedia sobre &quot;Object (computer science)&quot;</a></li>
+</ul>
+</div>
+<div class="section" id="qu-son-las-clases">
+<h2><a class="toc-backref" href="#id13">2.3&nbsp;&nbsp;&nbsp;¿Qué son las clases?</a></h2>
+<p>Si bien los objetos son quienes interactúan en la aplicación para resolver nuestro problema, las <em>clases</em> son quienes realmente representan la estructura de cada una de nuestras abstracciones. En las clases es donde se definen los
+<strong>atributos</strong> y los <strong>métodos</strong>, es decir, los <strong>miembros</strong>, de la clase.</p>
+<p>Los objetos son <strong>instancias</strong> de las clases. Así, <tt class="docutils literal"><span class="pre">empleado_1</span></tt> y <tt class="docutils literal"><span class="pre">empleado_2</span></tt> podrían ser <em>instancias</em> de la clase
+<tt class="docutils literal"><span class="pre">Empleado</span></tt>, y <tt class="docutils literal"><span class="pre">lassie</span></tt> y <tt class="docutils literal"><span class="pre">rintintin</span></tt> podrían serlo de <tt class="docutils literal"><span class="pre">Perro</span></tt>. Como puede notarse, las clases son el modelo de diferentes objetos que tienen características afines.</p>
+<p>En C++, se podría definir una clase del siguiente modo:</p>
+<pre class="literal-block">
+class Perro {
+private:
+        string color;
+        string nombre;
+public:
+        Perro(string nombre = &quot;NN&quot;, string color = &quot;Negro&quot;) {
+                this-&gt;color = color;
+                this-&gt;nombre = nombre;
+        }
+
+        void ladrar() {
+                // Ladrar.
+        }
+        void cambiarNombre(string nombre) {
+                this-&gt;nombre = nombre;
+        }
+        void cambiarColor(string color) {
+                this-&gt;color = color;
+        }
+};
+</pre>
+<p>Así podríamos crear instancias (objetos) para Lassie y Rin Tin Tin:</p>
+<pre class="literal-block">
+int main() {
+        Perro lassie(&quot;Lassie&quot;);
+        Perro rintintin(&quot;Rin Tin Tin&quot;);
+
+        lassie.cambiarColor(&quot;Blanco y marron&quot;);
+        rintintin.cambiarColor(&quot;Blanco, marron y negro&quot;);
+}
+</pre>
+<p>Links de interés:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://java.sun.com/docs/books/tutorial/java/concepts/class.html">&quot;What Is a Class?&quot; en un tutorial de Sun</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Class_%28computer_science%29">Artículo en Wikipedia sobre &quot;Class (computer science)&quot;</a></li>
+</ul>
+</div>
+<div class="section" id="me-vuelven-loco-con-los-nombres-por-qu-cada-cosa-tiene-tantos-nombres-diferentes">
+<h2><a class="toc-backref" href="#id14">2.4&nbsp;&nbsp;&nbsp;Me vuelven loco con los nombres. ¿Por qué cada cosa tiene tantos nombres diferentes?</a></h2>
+<p>Esta pregunta, en realidad, no tiene una respuesta única y categórica. Sin embargo, puede ser aprovechada para aclarar cuáles de las palabras que aparecen en los textos son sinónimos entre sí. Se destacarán aquellas utilizadas en este documento.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="29%" />
+<col width="36%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><strong>objeto</strong></td>
+<td colspan="2"><strong>instancia</strong></td>
+</tr>
+<tr><td><strong>atributo</strong></td>
+<td>propiedad</td>
+<td>característica</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="qu-quieren-decir-con-encapsulamiento">
+<h2><a class="toc-backref" href="#id15">2.5&nbsp;&nbsp;&nbsp;¿Qué quieren decir con &quot;encapsulamiento&quot;?</a></h2>
+<p>El <strong>encapsulamiento</strong> es la propiedad de la POO que permite ubicar el <em>comportamiento</em> y la <em>estructura</em> de una abstracción (clase) en un <strong>mismo compartimento</strong>. Algunos lenguajes, como C++, ofrecen también modificadores de
+acceso para los miembros de las clases.</p>
+</div>
+<div class="section" id="qu-es-encapsulamiento-u-ocultamiento-de-datos-en-poo">
+<h2><a class="toc-backref" href="#id16">2.6&nbsp;&nbsp;&nbsp;¿Qué es &quot;encapsulamiento u ocultamiento de datos&quot; en POO?</a></h2>
+<p>El concepto de <strong>encapsulamiento</strong> también suele extenderse al de <strong>encapsulamiento u ocultamiento de datos</strong>, es decir, lisa y llanamente, a la premisa de la modificación de los <em>atributos</em> únicamente a través de ciertas operaciones (<em>métodos</em>) creados con ese propósito. Esto permite <em>preservar</em> los datos, adquiriendo estos siempre valores válidos.</p>
+</div>
+<div class="section" id="qu-es-la-herencia">
+<h2><a class="toc-backref" href="#id17">2.7&nbsp;&nbsp;&nbsp;¿Qué es la herencia?</a></h2>
+<p>La <strong>herencia</strong> es una relación <em>estructural</em> y <em>estática</em>, definida en <em>tiempo de compilación</em> en la cual existe un <em>vínculo &quot;es un&quot;</em> entre una clase <strong>ancestro</strong> y una clase <strong>descendiente</strong>. (En los lenguajes que soportan
+<em>herencia múltiple</em>, como es el caso de C++, los ancestros pueden ser más de uno.)</p>
+<p>La herencia es uno de los conceptos clave en el paradigma de la programación orientada a objetos. Posibilita, entre otras cosas:</p>
+<ul class="simple">
+<li>establecer relaciones de orden o jerarquía entre clases</li>
+<li>aprovechar el <em>polimorfismo</em> (y darle sentido a este)</li>
+<li>dar utilidad a las <em>clases abstractas</em></li>
+<li>permitir la reutilización de código</li>
+</ul>
+</div>
+<div class="section" id="no-entend-lo-del-v-nculo-es-un-es-un-qu">
+<h2><a class="toc-backref" href="#id18">2.8&nbsp;&nbsp;&nbsp;No entendí lo del vínculo &quot;es un&quot;. ¿&quot;Es un&quot; qué?</a></h2>
+<p>Se suele pensar en las relaciones entre ancestro-descendiente como vínculos &quot;es un&quot;. Imaginemos por un momento que tenemos que modelar un restaurante. Entre los principales actores se encontrarán los empleados, por lo que suena
+coherente crear una clase <tt class="docutils literal"><span class="pre">Empleado</span></tt>. Sin embargo, para nuestros fines, puede llegar a ser necesario distinguir entre distintos <em>tipos</em> de empleados; por ejemplo: el mozo, el cocinero, el cajero, etc.</p>
+<p>En ese caso, las clases <tt class="docutils literal"><span class="pre">Mozo</span></tt>, <tt class="docutils literal"><span class="pre">Cocinero</span></tt>, <tt class="docutils literal"><span class="pre">Cajero</span></tt> serían <em>subtipos</em> o <em>descendientes</em> de <tt class="docutils literal"><span class="pre">Empleado</span></tt>. De modo que es válido decir que:</p>
+<ul class="simple">
+<li>Todo <tt class="docutils literal"><span class="pre">Mozo</span></tt> <strong>es un</strong> <tt class="docutils literal"><span class="pre">Empleado</span></tt>.</li>
+<li>Todo <tt class="docutils literal"><span class="pre">Cocinero</span></tt> <strong>es un</strong> <tt class="docutils literal"><span class="pre">Empleado</span></tt>.</li>
+<li>Todo <tt class="docutils literal"><span class="pre">Cajero</span></tt> <strong>es un</strong> <tt class="docutils literal"><span class="pre">Empleado</span></tt>.</li>
+</ul>
+<p>El siguiente esquema muestra el árbol de clases que podría utilizarse:</p>
+<img alt="taxonomia-clases.png" src="taxonomia-clases.png" />
+<p>Esta manera de organizar el árbol de clases no difiere en nada con las técnicas utilizadas para la taxonomía o clasificación en diversas ciencias. Pensar a las clases de esta manera en la POO hace que el <em>polimorfismo</em> tenga sentido.</p>
+</div>
+<div class="section" id="qu-tengo-que-entender-por-redefinici-n">
+<h2><a class="toc-backref" href="#id19">2.9&nbsp;&nbsp;&nbsp;¿Qué tengo que entender por &quot;redefinición&quot;?</a></h2>
+<p>Simplemente, <em>redefinir</em> en POO es escribir una implementación nueva de un mismo método (con mismos parámetros), ya existente en una clase ancestro, en una clase descendiente. Ejemplo rápido:</p>
+<pre class="literal-block">
+class A {
+private:
+        string color;
+public:
+        // Declaro y defino un método.
+        void foo() {
+                this-&gt;color = &quot;blue&quot;;
+        }
+};
+
+class B : public A {
+public:
+        // Lo redefino en una clase descendiente.
+        void foo() {
+                this-&gt;color = &quot;red&quot;;
+        }
+};
+</pre>
+</div>
+<div class="section" id="qu-es-polimorfismo">
+<h2><a class="toc-backref" href="#id20">2.10&nbsp;&nbsp;&nbsp;¿Qué es polimorfismo?</a></h2>
+<p>El polimorfismo es la característica de la POO que permite, en una jerarquía de clases (es decir, en la taxonomía dada por las relaciones de herencia), aprovechando los vínculos &quot;es un&quot; entre clases, utilizar instancias de clases
+descendientes en contextos en los que se utilizarían instancias de las respectivas clases ancestro, manteniendo de esta manera una respuesta unificada.</p>
+<p>Además, el polimorfismo posibilita el retardo de la decisión acerca de qué implementación de un método será utilizada hasta tiempo de ejecución.</p>
+</div>
+<div class="section" id="qu-quiere-decir-que-un-m-todo-sea-virtual-es-importante">
+<h2><a class="toc-backref" href="#id21">2.11&nbsp;&nbsp;&nbsp;¿Qué quiere decir que un método sea &quot;virtual&quot;? ¿Es importante?</a></h2>
+<p>El concepto de método virtual se encuentra muy ligado al de <strong>redefinición</strong>, y es clave en la POO. Los siguientes ejemplos ayudarán a comprenderlo:</p>
+<pre class="literal-block">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+class A {
+public:
+        void m() {
+                cout &lt;&lt; &quot;m() en A&quot; &lt;&lt; endl;
+        }
+};
+
+class B : public A {
+public:
+        void m() {
+                cout &lt;&lt; &quot;m() en B&quot; &lt;&lt; endl;
+        }
+};
+
+int main() {
+        // Asignacion polimorfica
+        A* a = new B();
+        // Llamada al metodo
+        a-&gt;m();
+        delete a;
+        return 0;
+}
+</pre>
+<p>En principio, tenemos, simplemente, dos clases, <tt class="docutils literal"><span class="pre">A</span></tt> y <tt class="docutils literal"><span class="pre">B</span></tt>, con una relación de herencia (<tt class="docutils literal"><span class="pre">B</span></tt> es descendiente de <tt class="docutils literal"><span class="pre">A</span></tt>). En nuestra función <tt class="docutils literal"><span class="pre">main()</span></tt>, la asignación polimórfica nos permite asociar un puntero a una instancia de
+la clase <tt class="docutils literal"><span class="pre">A</span></tt> con un puntero a una instancia de la clase <tt class="docutils literal"><span class="pre">B</span></tt>. Sin embargo, al llamar al método <tt class="docutils literal"><span class="pre">m()</span></tt>, contrariamente a lo que uno podría llegar a pensar, se invocará al método definido en <tt class="docutils literal"><span class="pre">A</span></tt>. En otras palabras, si se compila y ejecuta el fragmento de código anterior se obtendrá:</p>
+<pre class="literal-block">
+m() en A
+</pre>
+<p>Hagamos un ligero cambio a nuestros métodos, agregándoles en su declaración la palabra <tt class="docutils literal"><span class="pre">virtual</span></tt>:</p>
+<pre class="literal-block">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+class A {
+public:
+        virtual void m() {
+                cout &lt;&lt; &quot;m() en A&quot; &lt;&lt; endl;
+        }
+};
+
+class B : public A {
+public:
+        virtual void m() {
+                cout &lt;&lt; &quot;m() en B&quot; &lt;&lt; endl;
+        }
+};
+
+int main() {
+        A* a = new B();
+        a-&gt;m();
+        delete a;
+        return 0;
+}
+</pre>
+<p>Si ahora ejecutáramos este último código compilado, obtendríamos lo siguiente:</p>
+<pre class="literal-block">
+m() en B
+</pre>
+<p>¿Qué es lo que ocurrió? Mediante la palabra <tt class="docutils literal"><span class="pre">virtual</span></tt> se indicó que se pretendía posponer la vinculación del método con la instancia hasta tiempo de ejecución. Esto es lo que se conoce como <em>late binding</em> o, en español, <strong>ligadura tardía</strong> (también se suelen usar las palabras <strong>dinámica</strong> o <strong>virtual</strong>, en reemplazo de &quot;tardía&quot;, para hacer referencia a lo mismo).</p>
+<p>En este caso, al llamar al método <tt class="docutils literal"><span class="pre">m()</span></tt> de un objeto del tipo <tt class="docutils literal"><span class="pre">B</span></tt>, se estará invocando a la implementación de este en la clase <tt class="docutils literal"><span class="pre">B</span></tt>, independientemente de cuál sea el tipo del puntero que hace referencia a él.</p>
+<p><strong>Atención:</strong> En algunos lenguajes, como Java, los métodos en las clases son virtuales por omisión.</p>
+</div>
+<div class="section" id="qu-es-una-clase-abstracta">
+<h2><a class="toc-backref" href="#id22">2.12&nbsp;&nbsp;&nbsp;¿Qué es una &quot;clase abstracta&quot;?</a></h2>
+<p>Yendo al grano, una clase abstracta es una clase que <strong>no puede ser instanciada</strong>. En C++, basta con que exista un <em>método abstracto</em> en la clase para que esta sea considerada abstracta. Las clases que no son abstractas
+suelen ser llamadas <em>concretas</em>.</p>
+<p>En la práctica, las clases abstractas suelen corresponder a nociones o conceptos abstractos. Como ejemplo, podríamos pensar que tenemos a cargo modelar distintas formas geométricas que eventualmente dibujaremos de algún modo en la
+pantalla. Enseguida surge la opción de crear una clase <tt class="docutils literal"><span class="pre">Forma</span></tt>, con un método <tt class="docutils literal"><span class="pre">dibujar()</span></tt>. Sin embargo, no tenemos manera de saber cómo dibujar una <tt class="docutils literal"><span class="pre">Forma</span></tt> si no sabemos de qué forma se trata.</p>
+<p>Podríamos, sin embargo, crear <em>subtipos</em> de <tt class="docutils literal"><span class="pre">Forma</span></tt> que alberguen esta información. Por ejemplo, los tipos <tt class="docutils literal"><span class="pre">Circulo</span></tt> y <tt class="docutils literal"><span class="pre">Triangulo</span></tt>. Al heredar de una clase abstracta, las clases <tt class="docutils literal"><span class="pre">Circulo</span></tt> y <tt class="docutils literal"><span class="pre">Triangulo</span></tt> se encuentran
+<strong>obligadas a implementar</strong> los métodos abstractos de su clase ancestro (más allá de que estos tengan o no una implementación previa).</p>
+<p>Hasta dónde un concepto es lo suficientemente abstracto como para que tenga sentido representarlo mediante una clase abstracta depende mucho del sistema y de la especificidad que busque el programador en su diseño. Para alguno una
+clase <tt class="docutils literal"><span class="pre">Auto</span></tt> puede ser obligadamente abstracta (por ejemplo, si uno piensa en tener subtipos del tipo <tt class="docutils literal"><span class="pre">Convertible</span></tt> o <tt class="docutils literal"><span class="pre">Ferrari</span></tt>). Para otros, una clase concreta <tt class="docutils literal"><span class="pre">Auto</span></tt> puede ser suficiente.</p>
+<p><strong>Atención:</strong> Las clases abstractas no existen en todos los lenguajes que soportan el paradigma de la POO. Python, por ejemplo, no las soporta.</p>
+</div>
+<div class="section" id="todo-muy-lindo-pero-c-mo-declaro-un-m-todo-abstracto">
+<h2><a class="toc-backref" href="#id23">2.13&nbsp;&nbsp;&nbsp;Todo muy lindo pero... ¿Cómo declaro un &quot;método abstracto&quot;?</a></h2>
+<p>Los métodos abstractos (también llamados <em>virtuales puros</em>) son, generalmente, métodos sin implementación. Los métodos abstractos dan origen a las clases abstractas. De esta manera, las clases descendiente están <strong>obligadas a implementarlos</strong>.:</p>
+<pre class="literal-block">
+//Clase abstracta.
+class Forma {
+public:
+        // Declaracion de un metodo abstracto.
+        virtual void dibujar() const = 0;
+};
+
+class Circulo : public Forma {
+public:
+        virtual void dibujar() const {
+                // Implementacion para dibujar un circulo.
+        }
+};
+class Triangulo : public Forma {
+public:
+        virtual void dibujar() const {
+                // Implementacion para dibujar un triangulo.
+        }
+};
+</pre>
+<p>El anterior fragmento de código en C++ muestra la declaración de un método abstracto (que convierte a la clase en abstracta) <tt class="docutils literal"><span class="pre">dibujar()</span></tt> y su implementación en las clases descendientes. La clase <tt class="docutils literal"><span class="pre">Forma</span></tt> <strong>no puede ser
+instanciada</strong>, y las clases descendientes están <strong>obligadas a implementar el método abstracto</strong>. La parte de <tt class="docutils literal"><span class="pre">=</span> <span class="pre">0</span></tt> es la que indica que el método es abstracto o virtual puro.</p>
+<p><strong>Atención:</strong> La sintaxis para métodos abstractos en C++ obliga la utilización de la palabra reservada <tt class="docutils literal"><span class="pre">virtual</span></tt> además del <tt class="docutils literal"><span class="pre">=</span> <span class="pre">0</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="contenidos-adicionales">
+<h1><a class="toc-backref" href="#id24">3&nbsp;&nbsp;&nbsp;Contenidos adicionales</a></h1>
+<div class="section" id="bubble-sort">
+<h2><a class="toc-backref" href="#id25">3.1&nbsp;&nbsp;&nbsp;Bubble sort</a></h2>
+<p>Pseudocódigo:</p>
+<pre class="literal-block">
+bubble_sort(A: lista/arreglo de elementos):
+        aa
+</pre>
+</div>
+</div>
+<div class="section" id="todo">
+<h1><a class="toc-backref" href="#id26">4&nbsp;&nbsp;&nbsp;TODO</a></h1>
+<ul class="simple">
+<li>Agregar otros temas además de POO.</li>
+</ul>
+</div>
+<div class="section" id="cambios">
+<h1><a class="toc-backref" href="#id27">5&nbsp;&nbsp;&nbsp;Cambios</a></h1>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id28">5.1&nbsp;&nbsp;&nbsp;21/01/2011</a></h2>
+<ul class="simple">
+<li>Se retomó el proyecto, intentando agregar todos los temas que habían quedado afuera</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id29">5.2&nbsp;&nbsp;&nbsp;14/08/2007</a></h2>
+<ul class="simple">
+<li>Se corrigió un error, y se agregó una pequeña nota al final de: &quot;¿Qué quiere decir que un método sea &quot;virtual&quot;? ¿Es importante?&quot;</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id30">5.3&nbsp;&nbsp;&nbsp;25/07/2007</a></h2>
+<ul class="simple">
+<li>Se agregó: &quot;¿Qué quiere decir que un método sea &quot;virtual&quot;? ¿Es importante?&quot;</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id31">5.4&nbsp;&nbsp;&nbsp;10/07/2007</a></h2>
+<ul class="simple">
+<li>Ahora la clase <tt class="docutils literal"><span class="pre">Perro</span></tt> tiene un constructor con parámetros para inicializar al objeto. (Gracias Mariano Simone!)</li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>
