@@ -18,24 +18,6 @@ La presente versión, es una extensión a la original, realizada por `Mariano Simo
 .. contents:: Tabla de contenidos
 .. sectnum::
 
-Estructuras de datos
-====================
-Lista
------
-Blah
-
-Pila
-----
-Bleh
-
-Cola
-----
-Buh
-
-Árbol
------
-Bueh
-
 Introducción a la Programación Orientada a Objetos (POO)
 ========================================================
 ¿Programación Orientada a Objetos? ¿Y qué es eso?
@@ -324,13 +306,30 @@ instanciada**, y las clases descendientes están **obligadas a implementar el mét
 
 Contenidos adicionales
 ======================
+Estructuras de datos
+--------------------
+
+Lista
+`````
+TODO
+
+Pila
+````
+TODO
+
+Cola
+````
+TODO
+
+Árbol
+`````
+TODO
+
+Métodos de Ordenamiento
+-----------------------
 Bubble sort
------------
-Pseudocódigo::
-
-	bubble_sort(A: lista/arreglo de elementos):
-		aa
-
+```````````
+TODO
 
 TODO
 ====
