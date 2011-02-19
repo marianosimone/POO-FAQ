@@ -302,38 +302,6 @@ instanciada**, y las clases descendientes están **obligadas a implementar el mét
 
 **Atención:** La sintaxis para métodos abstractos en C++ obliga la utilización de la palabra reservada ``virtual`` además del ``= 0``.
 
-Contenidos adicionales
-======================
-Estructuras de datos
---------------------
-
-Lista
-`````
-TODO
-
-Pila
-````
-TODO
-
-Cola
-````
-TODO
-
-Árbol
-`````
-TODO
-
-Métodos de Ordenamiento
------------------------
-Bubble sort
-```````````
-TODO
-
-TODO
-====
-
-* Agregar otros temas además de POO.
-
 Cambios
 =======
 21/01/2011
