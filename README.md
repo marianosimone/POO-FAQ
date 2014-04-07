@@ -135,7 +135,7 @@ En ese caso, las clases *Mozo*, *Cocinero*, *Cajero* serían *subtipos* o *desce
 
 El siguiente esquema muestra el árbol de clases que podría utilizarse:
 
-<img alt="taxonomia-clases.png" src="taxonomia-clases.png" />
+![diagrama de clases Mozo, Cocinero y Cajero "es un" Empleado](es-un.png)
 
 Esta manera de organizar el árbol de clases no difiere en nada con las técnicas utilizadas para la taxonomía o clasificación en diversas ciencias. Pensar a las clases de esta manera en la POO hace que el *polimorfismo* tenga sentido.
 
